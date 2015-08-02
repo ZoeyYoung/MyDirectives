@@ -1,10 +1,10 @@
-angular.module('form.singleCheckbox', []).directive('singleCheckbox', function($log) {
-    return {
-        restrict: 'EA',
-        replace: false,
-        scope: '@',
-        link: function(scope, element, attr, ctrl) {
-            if (scope.$last) {
+define(['angular'], function(angular) {
+    angular.module('form.singleCheckbox', []).directive('singleCheckbox', function($log) {
+        return {
+            restrict: 'EA',
+            replace: false,
+            scope: '@',
+            link: function(scope, element, attr, ctrl) {
                 var inputs = element.parent().find("input");
                 if (inputs.length > 1) {
                     inputs.each(function(i, v) {
@@ -17,6 +17,6 @@ angular.module('form.singleCheckbox', []).directive('singleCheckbox', function($
                     });
                 }
             }
-        }
-    };
+        };
+    });
 });
